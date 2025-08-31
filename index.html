@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Sigma Chi Website Platform - Brothers Proposal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #00A5ED 0%, #FFC141 50%, #002B49 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+            box-shadow: 0 0 40px rgba(0,0,0,0.2);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #002B49 0%, #366ABE 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 193, 65, 0.1);
+            border-radius: 50%;
+        }
+        
+        .sigma-chi-logo {
+            font-size: 3.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        
+        .expect-more {
+            color: #FFC141;
+            font-size: 1.2em;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+        
+        .header-subtitle {
+            font-size: 1.4em;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+        
+        .main-content {
+            padding: 40px;
+        }
+        
+        .intro-section {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 30px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 15px;
+            border-left: 5px solid #00A5ED;
+        }
+        
+        .intro-title {
+            font-size: 2.2em;
+            color: #002B49;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .intro-text {
+            font-size: 1.1em;
+            line-height: 1.7;
+            color: #495057;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .feature-card {
+            background: white;
+            border: 3px solid #00A5ED;
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #00A5ED, #FFC141);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 165, 237, 0.2);
+            border-color: #FFC141;
+        }
+        
+        .feature-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .feature-title {
+            font-size: 1.4em;
+            color: #002B49;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .feature-desc {
+            color: #495057;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .feature-benefits {
+            list-style: none;
+            margin-top: 15px;
+        }
+        
+        .feature-benefits li {
+            color: #00A5ED;
+            margin: 8px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .feature-benefits li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #FFC141;
+            font-weight: bold;
+        }
+        
+        .cost-section {
+            background: linear-gradient(135deg, #002B49 0%, #366ABE 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .cost-title {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #FFC141;
+            font-weight: 600;
+        }
+        
+        .cost-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .cost-column {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 15px;
+            border: 2px solid rgba(255, 193, 65, 0.3);
+        }
+        
+        .cost-column-title {
+            font-size: 1.8em;
+            color: #FFC141;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .cost-item {
+            background: rgba(255, 255, 255, 0.1);
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .cost-free {
+            color: #28a745;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        
+        .cost-paid {
+            color: #FFC141;
+            font-weight: 600;
+        }
+        
+        .timeline-section {
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+        }
+        
+        .timeline-title {
+            font-size: 2.2em;
+            color: #002B49;
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+        
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 30px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            border-left: 5px solid #00A5ED;
+        }
+        
+        .timeline-item {
+            text-align: center;
+            flex: 1;
+            padding: 0 15px;
+        }
+        
+        .timeline-number {
+            background: #00A5ED;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .timeline-label {
+            color: #002B49;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .timeline-desc {
+            color: #6c757d;
+            font-size: 0.9em;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #FFC141 0%, #FFD700 100%);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .cta-title {
+            font-size: 2.2em;
+            color: #002B49;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .cta-text {
+            font-size: 1.2em;
+            color: #002B49;
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+        
+        .brotherhood-values {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .value {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            min-width: 120px;
+        }
+        
+        .value-icon {
+            font-size: 2.5em;
+            color: #002B49;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .value-text {
+            color: #002B49;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+        
+        @media (max-width: 768px) {
+            .cost-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .brotherhood-values {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="sigma-chi-logo">SIGMA CHI</div>
+            <div class="expect-more">EXPECT MORE.</div>
+            <div class="header-subtitle">New Chapter Management Platform<br>Delta Chi Chapter - Wabash College</div>
+        </div>
+        
+        <div class="main-content">
+            <div class="intro-section">
+                <h1 class="intro-title">A Modern Platform for Our Brotherhood</h1>
+                <p class="intro-text">
+                    Building a comprehensive digital platform to strengthen our chapter operations, enhance brotherhood connections, 
+                    and streamline the day-to-day management that keeps our 140+ year legacy thriving. This isn't just a website - 
+                    it's a complete management system designed specifically for our chapter's needs.
+                </p>
+                
+                <div class="brotherhood-values">
+                    <div class="value">
+                        <span class="value-icon">🤝</span>
+                        <div class="value-text">FRIENDSHIP</div>
+                    </div>
+                    <div class="value">
+                        <span class="value-icon">⚖️</span>
+                        <div class="value-text">JUSTICE</div>
+                    </div>
+                    <div class="value">
+                        <span class="value-icon">📚</span>
+                        <div class="value-text">LEARNING</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="feature-icon">👥</span>
+                    <h3 class="feature-title">Member Management System</h3>
+                    <p class="feature-desc">Complete tracking of chapter life and member engagement.</p>
+                    <ul class="feature-benefits">
+                        <li>Meeting attendance tracking</li>
+                        <li>House points system and leaderboard</li>
+                        <li>Member directory with photos and bios</li>
+                        <li>Role management (President, Treasurer, etc.)</li>
+                        <li>Pledge progress tracking</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-icon">💰</span>
+                    <h3 class="feature-title">Financial Management</h3>
+                    <p class="feature-desc">Streamlined payment processing and financial tracking.</p>
+                    <ul class="feature-benefits">
+                        <li>Online dues payment with Stripe</li>
+                        <li>Fine tracking and payment</li>
+                        <li>Alumni donation portal</li>
+                        <li>Individual balance dashboards</li>
+                        <li>Automated payment confirmations</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-icon">📊</span>
+                    <h3 class="feature-title">Admin Dashboard</h3>
+                    <p class="feature-desc">Powerful tools for chapter leadership and management.</p>
+                    <ul class="feature-benefits">
+                        <li>Meeting attendance statistics</li>
+                        <li>Financial reports and member balances</li>
+                        <li>Bulk member management tools</li>
+                        <li>Event creation and calendar sync</li>
+                        <li>Automated meeting notes posting</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-icon">🏫</span>
+                    <h3 class="feature-title">Wabash Integration</h3>
+                    <p class="feature-desc">Seamless integration with your college accounts.</p>
+                    <ul class="feature-benefits">
+                        <li>Login with Wabash Outlook email</li>
+                        <li>Automatic MFA (already on your phone)</li>
+                        <li>Calendar events in your Outlook</li>
+                        <li>Chapter notifications via email</li>
+                        <li>No new passwords to remember</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-icon">🎯</span>
+                    <h3 class="feature-title">Rush & Recruitment</h3>
+                    <p class="feature-desc">Professional tools to attract quality potential new members.</p>
+                    <ul class="feature-benefits">
+                        <li>FAQ system for prospective members</li>
+                        <li>Contact forms and inquiry management</li>
+                        <li>Photo galleries of brotherhood events</li>
+                        <li>Executive board member profiles</li>
+                        <li>Chapter history and achievements</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-icon">📱</span>
+                    <h3 class="feature-title">Mobile App Experience</h3>
+                    <p class="feature-desc">App-like functionality without app store hassles.</p>
+                    <ul class="feature-benefits">
+                        <li>Install directly from website</li>
+                        <li>Push notifications for events</li>
+                        <li>Offline access to member directory</li>
+                        <li>Fast, responsive mobile design</li>
+                        <li>Works on iPhone and Android</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="cost-section">
+                <h2 class="cost-title">What Does This Cost?</h2>
+                <p style="font-size: 1.2em; margin-bottom: 30px; opacity: 0.9;">
+                    Using AWS Free Tier and smart architecture - we can build this for almost nothing
+                </p>
+                
+                <div class="cost-grid">
+                    <div class="cost-column">
+                        <h3 class="cost-column-title">🎯 FREE FOR 12 MONTHS</h3>
+                        <div class="cost-item">
+                            <span>Website Hosting & Speed (CloudFront)</span>
+                            <span class="cost-free">FREE</span>
+                        </div>
+                        <div class="cost-item">
+                            <span>Database (PostgreSQL)</span>
+                            <span class="cost-free">FREE</span>
+                        </div>
+                        <div class="cost-item">
+                            <span>File Storage (Photos, Documents)</span>
+                            <span class="cost-free">FREE</span>
+                        </div>
+                        <div class="cost-item">
+                            <span>API Requests (1M per month)</span>
+                            <span class="cost-free">FREE</span>
+                        </div>
+                        <div class="cost-item">
+                            <span>SSL Security Certificate</span>
+                            <span class="cost-free">FREE</span>
+                        </div>
+                        <div class="cost-item">
+                            <span>Domain Name (wabashsigmachi.org)</span>
+                            <span class="cost-free">OWNED</span>
+                        </div>
+                        <div style="margin-top: 20px; padding: 15px; background: rgba(40, 167, 69, 0.2); border-radius: 10px; border: 2px solid #28a745;">
+                            <strong style="color: #28a745; font-size: 1.3em;">Total Development Cost: $0-15/month</strong>
+                        </div>
+                    </div>
+                    
+                    <div class="cost-column">
+                        <h3 class="cost-column-title">💳 WHAT WE PAY FOR</h3>
+                        <div class="cost-item">
+                            <span>Stripe Payment Processing</span>
+                            <span class="cost-paid">2.9% + 30¢ per transaction</span>
+                        </div>
+                        <div class="cost-item">
+                            <span>Domain Renewal (yearly)</span>
+                            <span class="cost-paid">~$15/year</span>
+                        </div>
+                        <div class="cost-item">
+                            <span>Microsoft Graph API</span>
+                            <span class="cost-free">FREE</span>
+                        </div>
+                        <div class="cost-item">
+                            <span>Email Notifications</span>
+                            <span class="cost-free">FREE (via Outlook)</span>
+                        </div>
+                        <div style="margin-top: 20px; padding: 15px; background: rgba(255, 193, 65, 0.2); border-radius: 10px; border: 2px solid #FFC141;">
+                            <strong style="color: #B8860B; font-size: 1.1em;">After 12 months: ~$50-100/month</strong><br>
+                            <small style="opacity: 0.8;">Still cheaper than most fraternity management software</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 30px; padding: 20px; background: rgba(255, 255, 255, 0.1); border-radius: 15px;">
+                    <h4 style="color: #FFC141; margin-bottom: 10px; font-size: 1.3em;">Cost Comparison</h4>
+                    <p>Traditional fraternity management software: $200-800/month</p>
+                    <p><strong>Our custom platform: $0-15/month development, $50-100/month production</strong></p>
+                </div>
+            </div>
+            
+            <div class="timeline-section">
+                <h2 class="timeline-title">Development Timeline</h2>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-number">1</div>
+                        <div class="timeline-label">Month 1-2</div>
+                        <div class="timeline-desc">Foundation Setup<br>Microsoft Authentication</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-number">2</div>
+                        <div class="timeline-label">Month 3-4</div>
+                        <div class="timeline-desc">Member Management<br>Attendance Tracking</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-number">3</div>
+                        <div class="timeline-label">Month 5-6</div>
+                        <div class="timeline-desc">Payment System<br>Financial Management</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-number">4</div>
+                        <div class="timeline-label">Month 7-8</div>
+                        <div class="timeline-desc">Admin Dashboard<br>Rush Tools</div>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 30px; padding: 20px; background: white; border-radius: 10px; border-left: 5px solid #FFC141;">
+                    <h4 style="color: #002B49; margin-bottom: 10px;">Target Launch: Spring 2026</h4>
+                    <p style="color: #495057;">Full platform ready for next year's rush and chapter operations</p>
+                </div>
+            </div>
+            
+            <div class="cta-section">
+                <h2 class="cta-title">Building Excellence Together</h2>
+                <p class="cta-text">
+                    This platform represents our commitment to innovation and brotherhood excellence. 
+                    It will position our chapter as a leader in both technology and tradition.
+                </p>
+                
+                <div style="margin-top: 30px; padding: 25px; background: rgba(0, 43, 73, 0.1); border-radius: 15px;">
+                    <h4 style="color: #002B49; margin-bottom: 15px; font-size: 1.4em;">Why This Matters</h4>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px;">
+                        <div style="text-align: left;">
+                            <strong style="color: #002B49;">Efficiency:</strong> Automate tedious tasks like attendance and payment tracking
+                        </div>
+                        <div style="text-align: left;">
+                            <strong style="color: #002B49;">Transparency:</strong> Everyone can see their balances, house points, and chapter updates
+                        </div>
+                        <div style="text-align: left;">
+                            <strong style="color: #002B49;">Professionalism:</strong> Impress rushees and alumni with modern technology
+                        </div>
+                        <div style="text-align: left;">
+                            <strong style="color: #002B49;">Brotherhood:</strong> Better communication and engagement tools for all members
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 30px; font-size: 1.1em; color: #002B49;">
+                    <strong>Questions? Concerns? Ideas?</strong><br>
+                    Let's discuss this as a chapter - your input makes this better for everyone.
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
